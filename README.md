@@ -29,7 +29,7 @@ Each molecule is stored as an extended `.xyz` file containing 3D atomic coordina
 
 The U0 distribution is approximately Gaussian, centered around −411 Ha with a standard deviation driven primarily by molecular size. A Z-score normalization (`U0_norm = (U0 − mean) / std`) was applied before training, with the physical values preserved separately for evaluation.
 
-> *[Insert: U0 distribution — physical and normalized]*(https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_physical_standardized_U0_dists.png)
+> ![U0 distribution — physical and normalized](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_physical_standardized_U0_dists.png)
 
 > 📊 *[Insert: Atom count distribution per molecule]*
 
