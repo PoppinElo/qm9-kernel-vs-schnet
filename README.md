@@ -31,7 +31,7 @@ The U0 distribution is approximately Gaussian, centered around −411 Ha with a 
 
 > ![U0 distribution — physical and normalized](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_physical_standardized_U0_dists.png)
 
-> 📊 *[Insert: Atom count distribution per molecule]*
+> ![Atom count distribution per molecule](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_atoms_per_molec_dist.png)
 
 ---
 
@@ -54,17 +54,9 @@ Properties are stored in tab-separated format in the header line of each `.xyz` 
 
 PC9 has a broader and slightly shifted energy distribution compared to QM9 (std 64.85 Ha vs 40.06 Ha), reflecting the inclusion of more chemically diverse, drug-like structures. All 99,234 molecules fall within the QM9 atom-count range (≤ 29 atoms).
 
-> 📊 *[Insert: Energy distribution — physical and normalized]*
+> ![Energy distribution — physical and normalized](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/pc9_physical_and_standardized_U0_dists.png)
 
-> 📊 *[Insert: Atom count distribution and heavy atom count distribution]*
-
-> 📊 *[Insert: HOMO, LUMO, and HOMO-LUMO gap distributions]*
-
-> 📊 *[Insert: Element presence bar chart]*
-
-> 📊 *[Insert: Per-element atom count histograms]*
-
-> 📊 *[Insert: Energy vs. molecule size — scatter and mean line]*
+> ![Atom count distribution and heavy atom count distribution](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_atoms_per_molec_dist.png)
 
 ---
 
@@ -188,7 +180,7 @@ For model comparison, a 70/30 train/test split was applied over the full QM9 dat
 | 14 | 1.15 | 0.17 | 0.04 | 0.03 | — | — |
 | 15 | 0.99 | 0.09 | 0.03 | 0.04 | — | — |
 
-> 📊 *[Insert: Training curve comparison — Models A, B, C]*
+> ![Training curve comparison — Models A, B, C](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_train_test_evol.png)
 
 Model A shows highly unstable test loss (oscillating between 0.06 and 7.57) despite a steadily decreasing train loss — a sign that limited expressiveness makes it sensitive to the composition of each test batch. Model B converges smoothly and monotonically from epoch 1. Model C starts two orders of magnitude below Models A and B, reflecting SchNet's superior representational capacity; it is trained for only 10 epochs as convergence is effectively reached by epoch 6–7.
 
@@ -220,13 +212,13 @@ Models were evaluated on the held-out 30% test set (40,166 molecules). Predictio
 
 SchNet achieves an MAE of 0.339 Ha on QM9, roughly 26× lower than Model A and 13× lower than Model B, confirming its position as the strongest model within the training distribution. Notably, Model C also has a much tighter error distribution (lower std), indicating more consistent predictions across molecule types.
 
-> 📊 *[Insert: Absolute error distributions per model — QM9 test set]*
+> ![Absolute error distributions per model — QM9 test set](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_absol_errors.png)
 
-> 📊 *[Insert: Relative error distributions per model — QM9 test set]*
+> ![Relative error distributions per model — QM9 test set](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_relat_errors.png)
 
-> 📊 *[Insert: Pred vs. True scatter plots — QM9 test set]*
+> ![Error vs.Target scatter plots — QM9 test set](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_error_vs_U0_scattter.png)
 
-> 📊 *[Insert: MAE vs. molecule size (n_atoms) — QM9 test set]*
+> ![MAE vs. molecule size (n_atoms) — QM9 test set](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/qm9_abs_error_vs_num_atoms.png)
 
 ---
 
@@ -244,15 +236,13 @@ The exported models (trained on full QM9) were evaluated on all 99,234 molecules
 | Model B | 99,234 | 11.552 | 20.854 | 3.64% |
 | Model C (SchNet) | 99,234 | 59.265 | 77.096 | 15.38% |
 
-> 📊 *[Insert: MAE bar chart by model — absolute and relative — on PC9]*
+> ![Absolute error distributions on PC9](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/pc9_abs_error_dist.png)
 
-> 📊 *[Insert: Pred vs. True scatter plots on PC9]*
+> ![Relative error distributions on PC9](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/pc9_rel_error_dist.png)
 
-> 📊 *[Insert: Absolute error distributions on PC9]*
+> ![Pred vs. True scatter plots on PC9](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/pc9_pred_vs_true_U0.png)
 
-> 📊 *[Insert: Relative error distributions on PC9]*
-
-> 📊 *[Insert: MAE vs. molecule size on PC9]*
+> ![MAE vs. molecule size on PC9](https://github.com/PoppinElo/qm9-kernel-vs-schnet/blob/main/graphics/pc9_abs_error_vs_num_atoms.png)
 
 ### 5.2 Degradation Analysis
 
